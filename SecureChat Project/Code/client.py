@@ -1,9 +1,3 @@
-'''
-    *  Full Name:
-    *  Course:EECS 3482 A
-    *  Description:  Client  program. Established connection with the server
-    *
-'''
 import socket
 import time
 import threading
