@@ -16,7 +16,6 @@ def encrypt(data):
 
 def verify_file(f):
     # Verify the file was sent by the user
-    # TODO: NO NEED TO WORRY FOR ASSIGNEMNT 1
     # Naive verification by ensuring the first line has the "passkey"
     lines = f.split(bytes("\n", "ascii"), 1)
     first_line = lines[0]
