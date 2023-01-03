@@ -1,9 +1,3 @@
-'''
-    *  Full Name:
-    *  Course:EECS 3482 A
-    *  Description:  Server program. Accepts connections  from client programs
-    *
-'''
 import socket
 import time
 import threading
