@@ -1,10 +1,3 @@
-'''
-    *  Full Name:
-    *  Course:EECS 3482 A
-    *  Description: Certification Authority 
-    *
-'''
-
 from dh import create_dh_key, calculate_dh_secret
 
 from Crypto.Hash import SHA256
