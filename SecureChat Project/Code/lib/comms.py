@@ -8,11 +8,11 @@ from enum import Enum
 import hmac
 import hashlib
 
-# assignment 2 - start
+# part 2 - start
  
 from CA import Certificate_Authority
 
-# assignment 2 - end
+# part 2 - end
 
 # Add messages
 class Message(bytes, Enum):
@@ -41,7 +41,7 @@ class StealthConn(object):
         self.verbose = verbose
         self.user = user		
         
-        # assignment 2 - start
+        # part 2 - start
 
         self.state = 0
         self.localID = None
@@ -51,13 +51,11 @@ class StealthConn(object):
         self.certificate_authority = None
         self.certificate = None
         
-        # assignment 2 - end
+        # part 2 - end
         self.cipher, self._secret = self.generate_secret()
 
     def generate_secret(self):
         # Perform the initial connection handshake for agreeing on a shared secret
-
-        ### TODO: Your code here!
 
         # This can be broken into code run just on the server or just on the clientasdsad
         if self.server or self.client:
@@ -70,12 +68,12 @@ class StealthConn(object):
             shared_hash = calculate_dh_secret(their_public_key,
                                               my_private_key)
 
-            # assignment 2 - start
+            # part 2 - start
 
             self.pub_key = my_public_key
             self.remote_pub_key = their_public_key
 
-            # assignment 2 - end
+            # part 2 - end
             
 
             self._secret = shared_hash
@@ -110,7 +108,7 @@ class StealthConn(object):
         if self.verbose:
             print("Send state is ", self.state)
 
-        # Assignment 2 - start
+        # part 2 - start
         if self.state == 1 and self.localID is not None:
             self.certificate_authority = Certificate_Authority()
             self.certificate = self.certificate_authority.generateCertificate(self.localID, self.pub_key)
@@ -118,7 +116,7 @@ class StealthConn(object):
         
         if self.state == 2:
             encrypted_data = self.certificate + encrypted_data
-        # Assignment 2 - end
+        # part 2 - end
         
         # Encode the data's length into an unsigned two byte int ('H')
         pkt_len = struct.pack('H', len(encrypted_data))
@@ -140,7 +138,7 @@ class StealthConn(object):
         if self.verbose:
             print("Receive state is ", self.state)
         
-        # assignment 2 - start
+        # part 2 - start
         if self.state == 1 and self.localID is not None:
             self.certificate_authority = Certificate_Authority()
             self.certificate = self.certificate_authority.generateCertificate(self.localID, self.pub_key)
@@ -159,7 +157,7 @@ class StealthConn(object):
         else:
             msg = encrypted_data
 
-        # assignment 2 - end
+        # part 2 - end
 
         if self.cipher:
             data = self.cipher.decrypt(msg)
