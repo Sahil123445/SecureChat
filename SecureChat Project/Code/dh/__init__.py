@@ -3,8 +3,6 @@ from Crypto.Random import random
 
 from lib.helpers import read_hex
 
-# TODO: Is this the best choice of prime? Why? Why not? Feel free to replace!
-
 # 1536 bit safe prime for Diffie-Hellman key exchange
 # obtained from RFC 3526
 
@@ -19,7 +17,6 @@ C2007CB8 A163BF05 98DA4836 1C55D39A 69163FA8 FD24CF5F
 # Convert from the value supplied in the RFC to an integer
 prime = read_hex(raw_prime)
 alpha = 87
-# TODO: write the appropriate code to perform DH key exchange
 
 
 def create_dh_key():
