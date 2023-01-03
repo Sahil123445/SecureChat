@@ -1,9 +1,3 @@
-'''
-    *  Full Name: Sahil Moosa
-    *  Course:EECS 3482 A
-    *  Description:  Chat client.
-    *
-'''
 import socket
 import time
 import threading
