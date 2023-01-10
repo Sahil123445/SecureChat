@@ -1,6 +1,6 @@
 # SecureChat
 
-SecureChat is a local messsage application built for interaction between multiple users. It has end to end encryption and is secure from many attacks such as replay attack, man-in-the-middle attack because it uses digital certificates for verification as well as HMAC, SHA256 for .
+SecureChat is a local messsage application built for interaction between multiple users. It has end to end encryption and is secure from many attacks such as replay attack, man-in-the-middle attack because it uses digital certificates for verification as well as HMAC, SHA256 for encryption.
 
 Usage
 
